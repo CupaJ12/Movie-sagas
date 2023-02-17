@@ -45,6 +45,8 @@ function* fetchAllGenresPerMovie(action) {
     }
 }
 
+
+
 // function* fetchAllGenresPerMovie(action) {
    
 //     try {
@@ -95,6 +97,8 @@ const movieId = (state = {}, action) => {
 
 
 
+
+
 // Create one store that all components can use
 const storeInstance = createStore(
     combineReducers({
@@ -117,3 +121,4 @@ ReactDOM.render(
     </React.StrictMode>,
     document.getElementById('root')
 );
+
