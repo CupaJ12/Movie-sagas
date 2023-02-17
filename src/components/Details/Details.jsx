@@ -11,9 +11,10 @@ function Details() {
 
 	return (
 		<main>
+			<button onClick={() => history.push('/')}>Back to List</button>
 			<h1>Movie Details</h1>
 			<section className='Details'>
-				<div key={movieId.id}>
+				<div>
 					<h2>{movieId.title}</h2>
 					<img src={movieId.poster} alt={movieId.title} />
                     <p>{movieId.description}</p>

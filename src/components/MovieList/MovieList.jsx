@@ -16,7 +16,7 @@ const handleClick = (movie) => {
         console.log('in handleClick', movie);
         dispatch({ type: 'SET_MOVIE_ID', payload: movie });
         history.push('/details')
-        dispatch({ type: 'FETCH_GENRES' })
+        dispatch({ type: 'FETCH_GENRES', payload: movie.id })
         // history.push(`/details/${movie.id}`)
         // this would allow page refresh
         //redux method is easier
