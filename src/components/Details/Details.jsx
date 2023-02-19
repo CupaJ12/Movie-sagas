@@ -8,7 +8,7 @@ function Details() {
 	const history = useHistory();
 	const genres = useSelector((store) => store.genres);
 
-	console.log("genres",genres)
+	console.log('genres', genres);
 	console.log('in details', movieId);
 
 	return (
@@ -16,20 +16,15 @@ function Details() {
 			<button onClick={() => history.push('/')}>Back to List</button>
 			<h1>Movie Details</h1>
 			<section className='Details'>
-				<div>
+				<div key={movieId.id}>
 					<h2>{movieId.title}</h2>
 					<img src={movieId.poster} alt={movieId.title} />
-                    <p>{movieId.description}</p>
+					<p>{movieId.description}</p>
 					<h3>
 						Genres:
 						{genres.map((genre) => {
-							return (<li 
-							key={genre.id}>
-								{genre.name}
-							</li>);
-
-						})
-						}
+							return <li key={genre.name}>{genre.name}</li>;
+						})}
 					</h3>
 				</div>
 			</section>

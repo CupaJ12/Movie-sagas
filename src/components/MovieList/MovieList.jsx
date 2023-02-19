@@ -6,22 +6,21 @@ function MovieList() {
 	const dispatch = useDispatch();
 	const movies = useSelector((store) => store.movies);
 	const movieId = useSelector((store) => store.movieId);
-    const history = useHistory();
+	const history = useHistory();
 
 	useEffect(() => {
 		dispatch({ type: 'FETCH_MOVIES' });
 	}, []);
-    // handle click function to collect the ID of the movie clicked and send it to the details page using the movieId reducer
-const handleClick = (movie) => {
-        console.log('in handleClick', movie);
-        dispatch({ type: 'SET_MOVIE_ID', payload: movie });
-        history.push('/details')
-        dispatch({ type: 'FETCH_GENRES', payload: movie.id })
-        // history.push(`/details/${movie.id}`)
-        // this would allow page refresh
-        //redux method is easier
-    }
-
+	// handle click function to collect the ID of the movie clicked and send it to the details page using the movieId reducer
+	const handleClick = (movie) => {
+		console.log('in handleClick', movie);
+		dispatch({ type: 'SET_MOVIE_ID', payload: movie });
+		history.push('/details');
+		dispatch({ type: 'FETCH_GENRES', payload: movie.id });
+		// history.push(`/details/${movie.id}`)
+		// this would allow page refresh
+		//redux method is easier
+	};
 
 	return (
 		<main>
@@ -29,9 +28,13 @@ const handleClick = (movie) => {
 			<section className='movies'>
 				{movies.map((movie) => {
 					return (
-						<div key={movie.id} onClick={() => handleClick(movie)}>
+						<div
+							className='individual-movie'
+							key={movie.id}
+							onClick={() => handleClick(movie)}
+						>
 							<h3>{movie.title}</h3>
-							<img src={movie.poster} alt={movie.title} />
+							<img src={movie.poster} alt={movie.title} className='poster' />
 						</div>
 					);
 				})}

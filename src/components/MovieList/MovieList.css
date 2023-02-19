@@ -1,4 +1,22 @@
 .movies {
-    display : flex;
-    flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0 10px;
+}
+.individual-movie {
+	background-color: rgba(12, 12, 152, 0.479);
+	border-radius: 20px;
+	display: grid;
+	grid-template-columns: 200px;
+	place-items: center;
+	border-style: none;
+	margin: 5px;
+}
+
+.poster {
+	border-radius: 30px;
+	border: 2px;
+	padding: 2px;
+	margin: 5px;
 }

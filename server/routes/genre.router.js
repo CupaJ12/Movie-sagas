@@ -12,9 +12,8 @@ router.get('/:id', (req, res) => {
 	pool
 		.query(queryText)
 		.then((response) => {
-			console.log('res.rows:', res.rows);
-			res.send(res.rows);
-
+			console.log('response.rows:', response.rows);
+			res.send(response.rows);
 		})
 		.catch((error) => {
 			console.log('error in genre.router GET request', error);
