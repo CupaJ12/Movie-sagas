@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 router.get('/:id', (req, res) => {
-	// Add query to get all genres
+	// query to get all genres
 
 	let queryText = `SELECT "genres"."name" FROM "movies"
 	JOIN "movies_genres" ON "movies_genres"."movie_id" = "movies"."id"
@@ -12,13 +12,15 @@ router.get('/:id', (req, res) => {
 	pool
 		.query(queryText)
 		.then((response) => {
-			console.log('response.rows:', response.rows);
+			// console.log('response.rows:', response.rows);
 			res.send(response.rows);
 		})
 		.catch((error) => {
 			console.log('error in genre.router GET request', error);
 			res.sendStatus(500);
 		});
+
+	// first attempt below
 
 	// let queryText = `SELECT "genres", "name", "movies"."title" FROM "movies"
 	//   JOIN "movies_genres" ON "movies_genres"."movies_id" = "movies"."id"

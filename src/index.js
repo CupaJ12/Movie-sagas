@@ -21,21 +21,20 @@ function* fetchAllMovies() {
 	// get all movies from the DB
 	try {
 		const movies = yield axios.get('/api/movie');
-		console.log('get all:', movies.data);
+		// console.log('get all:', movies.data);
 		yield put({ type: 'SET_MOVIES', payload: movies.data });
 	} catch {
 		console.log('get all error');
 	}
 }
 
-//write a saga to get all genres from the DB for the specific movie selected
-// the below is untested, make sure to test it
+// below saga fetches all genres per movie based on the movie ID
 
 function* fetchAllGenresPerMovie(action) {
 	try {
 		let id = action.payload;
 		const genres = yield axios.get(`/api/genre/${id}`);
-		console.log('get genres:', genres.data);
+		// console.log('get genres:', genres.data);
 		yield put({ type: 'SET_GENRES', payload: genres.data });
 	} catch {
 		console.log('fetchTheGenres error');

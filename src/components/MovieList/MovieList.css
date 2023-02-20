@@ -4,6 +4,7 @@
 	justify-content: space-between;
 	margin: 0 10px;
 }
+/* for each movie div */
 .individual-movie {
 	background-color: rgba(12, 12, 152, 0.479);
 	border-radius: 20px;
@@ -13,7 +14,7 @@
 	border-style: none;
 	margin: 5px;
 }
-
+/* for the photos, rounded edges etc. */
 .poster {
 	border-radius: 30px;
 	border: 2px;
