@@ -78,7 +78,7 @@ const genres = (state = [], action) => {
 			return state;
 	}
 };
-//reducer to store the ID of one specific movie gathered from the users click
+//reducer to store one specific movie gathered from the users click
 const movieId = (state = {}, action) => {
 	switch (action.type) {
 		case 'SET_MOVIE_ID':
